@@ -1,34 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_wordcount.c                                     :+:      :+:    :+:   */
+/*   ft_tolower.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: eniini <eniini@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/07/16 13:24:33 by eniini            #+#    #+#             */
-/*   Updated: 2020/07/18 17:07:27 by eniini           ###   ########.fr       */
+/*   Created: 2020/06/15 20:19:43 by eniini            #+#    #+#             */
+/*   Updated: 2020/07/16 13:48:16 by eniini           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-size_t	ft_wordcount(char const *s, char c)
+int	ft_tolower(int c)
 {
-	size_t	i;
-	size_t	wordcount;
-
-	i = 0;
-	wordcount = 0;
-	if (s[i] != c && s[i] != '\0')
-		wordcount++;
-	while (s[i] != '\0')
-	{
-		if (s[i] == c)
-		{
-			if (s[i + 1] != c && s[i + 1] != '\0')
-				wordcount++;
-		}
-		i++;
-	}
-	return (wordcount);
+	if (c >= 'A' && c <= 'Z')
+		return (c + 32);
+	return (c);
 }
