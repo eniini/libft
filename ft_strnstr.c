@@ -6,7 +6,7 @@
 /*   By: eniini <eniini@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/30 17:07:22 by eniini            #+#    #+#             */
-/*   Updated: 2020/07/10 18:03:06 by eniini           ###   ########.fr       */
+/*   Updated: 2020/07/22 00:37:38 by eniini           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,16 +22,13 @@ char	*ft_strnstr(const char *stack, const char *ndl, size_t len)
 		return ((char*)&stack[0]);
 	while (*stack != '\0' && len >= ft_strlen(ndl))
 	{
-		if (*stack == *ndl)
+		i = 0;
+		while (*(stack + i) == *(ndl + i))
 		{
-			i = 0;
-			while (*(stack + i) == *(ndl + i))
-			{
-				if ((*(ndl + i + 1) == '\0') && (*(stack + i) ==
-					*(ndl + i)))
-					return ((char *)stack);
-				i++;
-			}
+			if ((*(ndl + i + 1) == '\0') && (*(stack + i) ==
+				*(ndl + i)))
+				return ((char *)stack);
+			i++;
 		}
 		len--;
 		stack++;

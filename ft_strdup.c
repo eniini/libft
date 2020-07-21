@@ -6,7 +6,7 @@
 /*   By: eniini <eniini@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/10 13:19:21 by eniini            #+#    #+#             */
-/*   Updated: 2020/07/18 18:49:57 by eniini           ###   ########.fr       */
+/*   Updated: 2020/07/22 00:35:02 by eniini           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,7 @@ char	*ft_strdup(const char *s1)
 	char	*dup;
 	size_t	i;
 
-	i = 0;
-	while (s1[i] != '\0')
-	{
-		i++;
-	}
+	i = ft_strlen(s1);
 	if (!(dup = (char*)malloc(sizeof(*dup) * (i + 1))))
 		return (NULL);
 	i = 0;
