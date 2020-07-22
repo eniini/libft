@@ -6,7 +6,7 @@
 /*   By: eniini <eniini@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/12 10:38:23 by eniini            #+#    #+#             */
-/*   Updated: 2020/07/22 00:32:06 by eniini           ###   ########.fr       */
+/*   Updated: 2020/07/22 17:18:03 by eniini           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 int		ft_atoi(const char *str)
 {
 	long int	result;
-	int 		negative;
+	int			negative;
 	size_t		i;
 
 	result = 0;

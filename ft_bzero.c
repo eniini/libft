@@ -6,7 +6,7 @@
 /*   By: eniini <eniini@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/03 15:22:28 by eniini            #+#    #+#             */
-/*   Updated: 2020/07/03 17:08:50 by eniini           ###   ########.fr       */
+/*   Updated: 2020/07/22 17:18:20 by eniini           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_bzero(void *s, size_t n)
 {
-	size_t		i;
+	size_t			i;
 	unsigned char	*str;
 
 	str = s;
