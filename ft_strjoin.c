@@ -41,7 +41,7 @@ char		*ft_strjoin(char const *s1, char const *s2)
 	char	*concat;
 	size_t	joinlen;
 
-	if (!s1 && s2)
+	if (!s1 && !s2)
 		return (NULL);
 	joinlen = ft_strlen(s1) + ft_strlen(s2);
 	if (!(concat = (char*)malloc(sizeof(concat) * (joinlen + 1))))
