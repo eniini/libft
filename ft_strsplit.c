@@ -6,7 +6,7 @@
 /*   By: eniini <eniini@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/26 14:23:57 by eniini            #+#    #+#             */
-/*   Updated: 2020/07/18 18:59:49 by eniini           ###   ########.fr       */
+/*   Updated: 2020/07/26 02:04:03 by eniini           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,31 +53,39 @@ static char	**ft_initsplit(char const *s, char c)
 	return (ret);
 }
 
-char		**ft_strsplit(char const *s, char c)
+static char	**ft_dosplit(char const *s, char c, char **ret, size_t wordcount)
 {
-	char	**ret;
-	size_t	i;
-	size_t	j;
+	size_t i;
+	size_t j;
 
 	i = 0;
 	j = 0;
-	ret = ft_initsplit(s, c);
-	while (j < ft_wordcount(s, c))
+	while (j < wordcount)
 	{
-		if (s[i] == c)
-			i++;
-		if ((s[i] == c && s[i + 1] != c) || (s[i] != c && s[i] != '\0'))
+		while (s[i] == c)
 		{
-			if (s[i] == c)
-				i++;
-			if (!(ret[j++] = ft_getstring(s, c, i)))
-			{
-				ft_freesplit(ret);
-				return (NULL);
-			}
-			while (s[i] != c && s[i] != '\0')
-				i++;
+			if (s[i] != c && s[i] != '\0')
+				break ;
+			i++;
 		}
+		if (!(ret[j++] = ft_getstring(s, c, i)))
+		{
+			ft_freesplit(ret);
+			return (NULL);
+		}
+		while (s[i] != c && s[i] != '\0')
+			i++;
 	}
 	return (ret);
+}
+
+char		**ft_strsplit(char const *s, char c)
+{
+	char	**ret;
+	size_t	wordcount;
+
+	if (!(ret = ft_initsplit(s, c)))
+		return (NULL);
+	wordcount = ft_wordcount(s, c);
+	return (ft_dosplit(s, c, ret, wordcount));
 }
