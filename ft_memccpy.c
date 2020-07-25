@@ -6,9 +6,18 @@
 /*   By: eniini <eniini@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/03 15:52:11 by eniini            #+#    #+#             */
-/*   Updated: 2020/07/04 17:14:58 by eniini           ###   ########.fr       */
+/*   Updated: 2020/07/25 14:35:07 by eniini           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+/*
+**	Copies bytes from string [src] to string [dst]. 
+**	If the character [c] (converted to an unsigned char) occurs in the [src],
+**	copy stops and pointer to the byte after (c) in the string [dst] is
+**	returned. Otherwise, [n] bytes are copied and a NULL pointer is returned.
+**
+**	Overlap of [src] and [dst] strings results in undefined behaviour.
+*/
 
 #include "libft.h"
 
@@ -21,12 +30,11 @@ void	*ft_memccpy(void *dst, const void *src, int c, size_t n)
 
 	dststr = dst;
 	srcstr = src;
-	chr = (unsigned char)c;
 	i = 0;
 	while (i < n)
 	{
 		dststr[i] = srcstr[i];
-		if (srcstr[i] == chr)
+		if (srcstr[i] == (unsigned char)c)
 			return ((void *)&dststr[++i]);
 		i++;
 	}

@@ -6,9 +6,14 @@
 /*   By: eniini <eniini@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/03 15:41:20 by eniini            #+#    #+#             */
-/*   Updated: 2020/07/03 16:25:10 by eniini           ###   ########.fr       */
+/*   Updated: 2020/07/25 14:19:45 by eniini           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+/*
+**	Writes [len] bytes of value [c] (converted to an unsigned char)
+**	to the string [b] and returns it.
+*/
 
 #include "libft.h"
 

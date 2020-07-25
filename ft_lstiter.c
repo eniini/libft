@@ -6,9 +6,13 @@
 /*   By: eniini <eniini@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/15 14:07:38 by eniini            #+#    #+#             */
-/*   Updated: 2020/07/15 14:16:57 by eniini           ###   ########.fr       */
+/*   Updated: 2020/07/25 13:51:00 by eniini           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+/*
+**	Iterates the list [lst] and applies the function [f] to each link.
+*/
 
 #include "libft.h"
 

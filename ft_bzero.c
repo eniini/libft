@@ -6,9 +6,13 @@
 /*   By: eniini <eniini@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/03 15:22:28 by eniini            #+#    #+#             */
-/*   Updated: 2020/07/22 17:18:20 by eniini           ###   ########.fr       */
+/*   Updated: 2020/07/25 14:18:38 by eniini           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+/*
+** Writes [n] zeroed bytes to the string [s].
+*/
 
 #include "libft.h"
 

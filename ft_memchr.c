@@ -6,9 +6,15 @@
 /*   By: eniini <eniini@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/03 16:06:56 by eniini            #+#    #+#             */
-/*   Updated: 2020/07/15 15:48:03 by eniini           ###   ########.fr       */
+/*   Updated: 2020/07/25 14:41:43 by eniini           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+/*
+**	Locates the first occurrence of [c] (converted to an unsigned char) in
+**	string [s]. Returns a pointer to the byte located, or NULL if no such byte
+**	exists within [n] bytes.
+*/
 
 #include "libft.h"
 
