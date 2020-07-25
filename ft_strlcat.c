@@ -6,9 +6,22 @@
 /*   By: eniini <eniini@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/25 18:32:10 by eniini            #+#    #+#             */
-/*   Updated: 2020/07/07 17:52:54 by eniini           ###   ########.fr       */
+/*   Updated: 2020/07/25 15:33:20 by eniini           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+/*
+**	Appends string [src] to the end of [dst]. It will append at most
+**	(dstsize - strlen(dst) - 1) characters. It will then NUL-terminate,
+**	unless [dstsize] is 0 or if [dst] was longer than [dstsize].
+**	If the [src] and [dst] strings overlap, the behavior is undefined.
+**
+**	Returns the total length of the string it tries to create.
+**	(initial length of [dst] plus the length of [src].)
+**
+**	If the return value is >= dstsize, the output string has been truncated.
+**	It is the caller's responsibility to handle this.
+*/
 
 #include "libft.h"
 

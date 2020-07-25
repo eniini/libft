@@ -6,12 +6,12 @@
 /*   By: eniini <eniini@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/03 15:52:11 by eniini            #+#    #+#             */
-/*   Updated: 2020/07/25 14:35:07 by eniini           ###   ########.fr       */
+/*   Updated: 2020/07/25 15:33:13 by eniini           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /*
-**	Copies bytes from string [src] to string [dst]. 
+**	Copies bytes from string [src] to string [dst].
 **	If the character [c] (converted to an unsigned char) occurs in the [src],
 **	copy stops and pointer to the byte after (c) in the string [dst] is
 **	returned. Otherwise, [n] bytes are copied and a NULL pointer is returned.
@@ -26,7 +26,6 @@ void	*ft_memccpy(void *dst, const void *src, int c, size_t n)
 	size_t				i;
 	unsigned char		*dststr;
 	const unsigned char	*srcstr;
-	unsigned char		chr;
 
 	dststr = dst;
 	srcstr = src;

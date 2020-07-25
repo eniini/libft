@@ -6,9 +6,21 @@
 /*   By: eniini <eniini@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/10 13:41:43 by eniini            #+#    #+#             */
-/*   Updated: 2020/07/24 15:48:49 by eniini           ###   ########.fr       */
+/*   Updated: 2020/07/25 15:33:31 by eniini           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+/*
+**	Lexicographically compares compares not more than n characters in
+**	the null-terminated strings [s1] and [s2].
+**	Characters after '\0' are not compared.
+**
+**	Returns an integer greater than, equal to, or less than 0,
+**	according as the [s1] is greater than, equal to, or less than the [s2].
+**
+**	Comparison is done with unsigned characters,
+**	so that `\200' is greater than `\0'.
+*/
 
 #include "libft.h"
 

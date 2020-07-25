@@ -6,9 +6,16 @@
 /*   By: eniini <eniini@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/30 12:59:21 by eniini            #+#    #+#             */
-/*   Updated: 2020/07/22 00:37:20 by eniini           ###   ########.fr       */
+/*   Updated: 2020/07/25 15:07:30 by eniini           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+/*
+**	Copies at most [len] characters the string [src] to [dst] and returns [dst].
+**	If [src] is less than [len] characters long, the remainder of [dst]
+**	is filled with `\0' characters. Otherwise, dst is not terminated.
+**	Source and destination should not overlap, as the behavior is undefined.
+*/
 
 #include "libft.h"
 
