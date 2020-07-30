@@ -6,7 +6,7 @@
 /*   By: eniini <eniini@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/10 16:37:48 by eniini            #+#    #+#             */
-/*   Updated: 2020/07/18 17:32:03 by eniini           ###   ########.fr       */
+/*   Updated: 2020/07/26 00:52:52 by eniini           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -136,14 +136,6 @@ void				ft_putnbr_fd(int n, int fd);
 
 /*
 ** [PART - 3 (BONUS)]
-**		• content : The data contained in the link. The void * allows to
-**					store any kind of data.
-** • content_size : The size of the data stored. The void * type doesn’t
-**					allow you to know the size of the pointed data,
-**					as a consequence, it is necessary to save its size.
-**					For instance, the size of the string "42" is 3 bytes
-**					and the 32bits integer 42 has a size of 4 bytes.
-** 			• next : The next link’s address or NULL if it’s the last link.
 */
 
 t_list				*ft_lstnew(void const *content, size_t content_size);
@@ -157,6 +149,8 @@ void				ft_lstadd(t_list **alst, t_list *new);
 void				ft_lstiter(t_list *lst, void (*f)(t_list *elem));
 
 t_list				*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
+
+void				ft_elemdel(void *content, size_t size);
 
 /*
 ** [PART - 4 (OWN FUNCTIONS)]
