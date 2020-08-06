@@ -40,7 +40,7 @@
 **	copied into *line.
 */
 
-int		getlinebreak(char **line, char **str)
+static int	getlinebreak(char **line, char **str)
 {
 	size_t		len;
 	char		*temp;
@@ -70,7 +70,7 @@ int		getlinebreak(char **line, char **str)
 **	Safely combining read buffer with str[fd]
 */
 
-char	*getstr(const int fd, char **str, char *buffer)
+static char	*getstr(const int fd, char **str, char *buffer)
 {
 	char		*temp;
 
