@@ -6,7 +6,7 @@
 /*   By: eniini <eniini@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/10 16:37:48 by eniini            #+#    #+#             */
-/*   Updated: 2020/08/06 18:35:20 by eniini           ###   ########.fr       */
+/*   Updated: 2020/08/06 18:43:37 by eniini           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,9 +26,9 @@
 # define BUFF_SIZE 32
 
 /*
-** ===================================
-**		<string.h> (& extensions)
-** ===================================
+** =========================
+** <string.h> (& extensions)
+** =========================
 **
 **	 [PART - 1: String Manipulation]
 */
@@ -124,9 +124,9 @@ int					ft_atoi(const char *str);
 char				*ft_itoa(int n);
 
 /*
-** ===================================
-**		<stdio.h> (& extensions)
-** ===================================
+** ========================
+** <stdio.h> (& extensions)
+** ========================
 */
 
 int					get_next_line(const int fd, char **line);
@@ -148,9 +148,9 @@ void				ft_putendl_fd(char const *s, int fd);
 void				ft_putnbr_fd(int n, int fd);
 
 /*
-** ===================================
-**				<ctype.h>
-** ===================================
+** =========
+** <ctype.h>
+** =========
 */
 
 int					ft_isalnum(int c);
@@ -174,9 +174,9 @@ int					ft_toupper(int c);
 int					ft_tolower(int c);
 
 /*
-** ===================================
-**				[EXTRA]
-** ===================================
+** =======
+** [EXTRA]
+** =======
 */
 
 typedef struct		s_list
