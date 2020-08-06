@@ -6,7 +6,7 @@
 /*   By: eniini <eniini@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/04 12:03:57 by eniini            #+#    #+#             */
-/*   Updated: 2020/08/05 12:19:41 by eniini           ###   ########.fr       */
+/*   Updated: 2020/08/06 18:36:00 by eniini           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,15 @@
 **	the reading has been completed, or if an error has happened respectively.
 */
 
-#include "get_next_line.h"
+#include <unistd.h>
+#include <stdlib.h>
+#include "libft.h"
+
+/*
+** soft FD limit. current system's soft cap can be checked with 'ulimit -n'
+*/
+
+#define FD_MAX 4096
 
 /*
 **	Increment str pointer until linebreak is found,
@@ -32,13 +40,11 @@
 **	copied into *line.
 */
 
-int		getlinebreak(char **line, char **str, ssize_t readbytes)
+int		getlinebreak(char **line, char **str)
 {
 	size_t		len;
 	char		*temp;
 
-	if ((readbytes = 0 && !str) || *str == '\0')
-		return (0);
 	len = 0;
 	while ((*str)[len] && (*str)[len] != '\n')
 		len++;
@@ -105,5 +111,9 @@ int		get_next_line(const int fd, char **line)
 		if ((temp = ft_strchr(str[fd], '\n')))
 			break ;
 	}
-	return (getlinebreak(line, &str[fd], readbytes));
+	if (readbytes < 0)
+		return (-1);
+	else if (readbytes == 0 && (str[fd] == NULL || str[fd][0] == '\0'))
+		return (0);
+	return (getlinebreak(line, &str[fd]));
 }
