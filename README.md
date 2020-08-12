@@ -1,49 +1,50 @@
 # libft
-recoding parts of standard C library
-currently includes:
+## recoding parts of standard C library
+### currently includes following functions:
 
-<string.h> (& extensions)
-[PART - 1: String Manipulation]
-strcpy/strncpy
-strcat/strncat/strlcat
-strdup/strndup
-strnew
-strdel
-strclr
-striter/striteri
-strmap/strmapi
-strsub
-strjoin
-strtrim
-strsplit
+### <string.h>
+##### [String Manipulation]
+* strcpy/strncpy
+* strcat/strncat
+* strlcat (BSD)
+* strdup/strndup
+* strnew (Pascal)
+* strdel _(nonstandard)_
+* strclr _(nonstandard)_
+* striter/striteri _(nonstandard)_
+* strmap/strmapi _(nonstandard)_
+* strsub _(nonstandard)_
+* strjoin _(nonstandard)_
+* strtrim _(nonstandard)_
+* strsplit _(nonstandard)_
 
-[PART 2: String Examination]
-strlen
-strcmp/strncmp
-strchr/strrchr
-strstr/strnstr
-strequ/strnequ
-wordcount
+##### [String Examination]
+* strlen
+* strcmp/strncmp
+* strchr/strrchr
+* strstr/strnstr
+* strequ/strnequ _(nonstandard)_
+* wordcount _(nonstandard)_
 
-[PART 3: Memory Manipulation]
-bzero
-memalloc
-memchr
-memcmp
-memcpy/memccpy
-memdel
-memmove
-memset
+##### [Memory Manipulation]
+* bzero
+* memalloc
+* memchr
+* memcmp
+* memcpy/memccpy
+* memdel
+* memmove
+* memset
 
-[PART 4: Numeric Conversions]
-atoi
-itoa
+##### <stdlib.h>
+* atoi
+* itoa _(nonstandard)_
 
-<stdio.h> (& extensions)
-get_next_line
-putchar/putchar_fd
-putstr/putstr_fd
-putendl/putendl_fd
-putnbr/putnbr_fd
+### <stdio.h>
+* get_next_line _(getline without linefeed)_
+* putchar/putchar_fd _(fputc)_
+* putstr/putstr_fd _(fputs with null terminator)_
+* putendl _(puts)_ /putendl_fd
+* putnbr/putnbr_fd
 
-<ctype.h>
+### <ctype.h>
