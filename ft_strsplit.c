@@ -6,25 +6,12 @@
 /*   By: eniini <eniini@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/26 14:23:57 by eniini            #+#    #+#             */
-/*   Updated: 2020/07/26 02:04:03 by eniini           ###   ########.fr       */
+/*   Updated: 2020/08/16 21:18:30 by eniini           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include "libft.h"
-
-static void	ft_freesplit(char **ret)
-{
-	size_t	i;
-
-	i = 0;
-	while (ret[i] != NULL)
-	{
-		free(ret[i]);
-		i++;
-	}
-	free(ret);
-}
 
 static char	*ft_getstring(char const *s, char c, size_t start)
 {
@@ -70,7 +57,7 @@ static char	**ft_dosplit(char const *s, char c, char **ret, size_t wordcount)
 		}
 		if (!(ret[j++] = ft_getstring(s, c, i)))
 		{
-			ft_freesplit(ret);
+			ft_free2d(ret);
 			return (NULL);
 		}
 		while (s[i] != c && s[i] != '\0')

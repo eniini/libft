@@ -6,7 +6,7 @@
 /*   By: eniini <eniini@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/04 12:03:57 by eniini            #+#    #+#             */
-/*   Updated: 2020/08/06 18:36:00 by eniini           ###   ########.fr       */
+/*   Updated: 2020/08/17 09:58:42 by eniini           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,7 +93,7 @@ static char	*getstr(const int fd, char **str, char *buffer)
 **	In case of EOF, all stored buffers are given to getlinebreak function.
 */
 
-int		get_next_line(const int fd, char **line)
+int			get_next_line(const int fd, char **line)
 {
 	static char *str[FD_MAX];
 	char		buffer[BUFF_SIZE + 1];

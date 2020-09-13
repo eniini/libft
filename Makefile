@@ -6,7 +6,7 @@
 #    By: eniini <eniini@student.hive.fi>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/06/11 10:42:46 by eniini            #+#    #+#              #
-#    Updated: 2020/07/26 01:25:54 by eniini           ###   ########.fr        #
+#    Updated: 2020/09/08 17:51:42 by eniini           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ NAME = libft.a
 
 CC = gcc
 
-CFLAGS = -c -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror -c
 
 SRC = ft_memset.c ft_bzero.c ft_memcpy.c ft_memccpy.c ft_memmove.c \
 	ft_memchr.c ft_memcmp.c ft_strlen.c ft_strdup.c ft_strcpy.c ft_strncpy.c \
@@ -28,19 +28,21 @@ SRC = ft_memset.c ft_bzero.c ft_memcpy.c ft_memccpy.c ft_memmove.c \
 	ft_itoa.c ft_putchar.c ft_putstr.c ft_putendl.c ft_putnbr.c \
 	ft_putchar_fd.c ft_putstr_fd.c ft_putendl_fd.c \
 	ft_putnbr_fd.c \
-	ft_lstnew.c ft_lstdelone.c ft_lstdel.c ft_lstadd.c ft_lstiter.c \
-	ft_lstmap.c \
+	ft_lstnew.c ft_lstdelone.c ft_lstdel.c ft_lstadd.c ft_lstaddl.c \
+	ft_lstiter.c ft_lstmap.c \
 	ft_wordcount.c ft_islower.c ft_isupper.c ft_isspace.c \
-	ft_strndup.c ft_elemdel.c
+	ft_strndup.c ft_elemdel.c ft_free2d.c ft_realloc.c get_next_line.c \
+	ft_get2dsize.c
 
 OBJ = $(SRC:.c=.o)
 
 all : $(NAME)
 
 $(NAME) : $(OBJ)
-	$(CC) $(CFLAGS) -c $(SRC)
-	ar rc $(NAME) $(OBJ)
-	ranlib $(NAME)
+	ar rcs $(NAME) $(OBJ)
+
+$(OBJ) : $(SRCS)
+	$(CC) $(CFLAGS) $(SRC)
 
 clean :
 	rm -f $(OBJ)
