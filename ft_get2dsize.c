@@ -6,7 +6,7 @@
 /*   By: eniini <eniini@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/04 21:13:21 by eniini            #+#    #+#             */
-/*   Updated: 2020/09/08 21:02:37 by eniini           ###   ########.fr       */
+/*   Updated: 2020/09/14 19:23:50 by eniini           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,9 @@
 
 #include "libft.h"
 
-int		ft_get2dsize(char **charray)
+size_t		ft_get2dsize(char **charray)
 {
-	int		i;
+	size_t 	i;
 
 	i = 0;
 	while (charray[i] != NULL)

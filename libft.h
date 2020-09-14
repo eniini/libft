@@ -6,7 +6,7 @@
 /*   By: eniini <eniini@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/10 16:37:48 by eniini            #+#    #+#             */
-/*   Updated: 2020/09/13 21:50:57 by eniini           ###   ########.fr       */
+/*   Updated: 2020/09/14 19:24:14 by eniini           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -206,6 +206,6 @@ void				ft_elemdel(void *content, size_t size);
 
 void				ft_free2d(char **ret);
 
-int					ft_get2dsize(char **charray);
+size_t 				ft_get2dsize(char **charray);
 
 #endif
