@@ -6,7 +6,7 @@
 /*   By: eniini <eniini@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/10 16:37:48 by eniini            #+#    #+#             */
-/*   Updated: 2020/09/14 19:24:14 by eniini           ###   ########.fr       */
+/*   Updated: 2020/10/01 16:23:56 by eniini           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@
 ** <string.h> (& extensions)
 ** =========================
 **
-**	 [PART - 1: String Manipulation]
+**	[PART - 1: String Manipulation]
 */
 
 char				*ft_strcpy(char *dst, const char *src);
@@ -179,6 +179,9 @@ int					ft_tolower(int c);
 ** =======
 ** [EXTRA]
 ** =======
+**
+** Generic linked list struct and basic functions.
+** ft_lstdel(2) & ft_lstdelone(2) should call ft_elemdel(2) by default.
 */
 
 typedef struct		s_list
@@ -204,8 +207,12 @@ t_list				*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 
 void				ft_elemdel(void *content, size_t size);
 
-void				ft_free2d(char **ret);
+/*
+** Array manipulation and examination.
+*/
 
-size_t 				ft_get2dsize(char **charray);
+void				ft_free_arr(char **arr);
+
+size_t 				ft_get_arr_size(char **arr);
 
 #endif

@@ -6,7 +6,7 @@
 #    By: eniini <eniini@student.hive.fi>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/06/11 10:42:46 by eniini            #+#    #+#              #
-#    Updated: 2020/09/08 17:51:42 by eniini           ###   ########.fr        #
+#    Updated: 2020/10/01 15:39:58 by eniini           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,8 +31,8 @@ SRC = ft_memset.c ft_bzero.c ft_memcpy.c ft_memccpy.c ft_memmove.c \
 	ft_lstnew.c ft_lstdelone.c ft_lstdel.c ft_lstadd.c ft_lstaddl.c \
 	ft_lstiter.c ft_lstmap.c \
 	ft_wordcount.c ft_islower.c ft_isupper.c ft_isspace.c \
-	ft_strndup.c ft_elemdel.c ft_free2d.c ft_realloc.c get_next_line.c \
-	ft_get2dsize.c
+	ft_strndup.c ft_elemdel.c ft_free_arr.c ft_realloc.c get_next_line.c \
+	ft_get_arr_size.c
 
 OBJ = $(SRC:.c=.o)
 

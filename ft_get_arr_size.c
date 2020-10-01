@@ -1,30 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_free2d.c                                        :+:      :+:    :+:   */
+/*   ft_get_arr_size.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: eniini <eniini@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/08/16 21:16:42 by eniini            #+#    #+#             */
-/*   Updated: 2020/09/13 21:49:43 by eniini           ###   ########.fr       */
+/*   Created: 2020/10/01 15:38:02 by eniini            #+#    #+#             */
+/*   Updated: 2020/10/01 15:38:06 by eniini           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
 /*
-** Frees all the elements inside a pointer array as well as the pointer.
+**	Get the n of array pointers allocated into given double char pointer.
 */
 
-void	ft_free2d(char **ret)
+#include "libft.h"
+
+size_t		ft_get_arr_size(char **arr)
 {
-	size_t	i;
+	size_t 	i;
 
 	i = 0;
-	while (ret[i] != NULL)
-	{
-		free(ret[i]);
+	while (arr[i] != NULL)
 		i++;
-	}
-	free(ret);
+	return (i);
 }
