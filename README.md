@@ -37,7 +37,7 @@
 * memset
 * realloc
 
-##### <stdlib.h>
+#### <stdlib.h>
 * atoi
 * itoa
 
@@ -53,7 +53,7 @@
 * islower / isupper
 * tolower / toupper
 
-#### Generic linked list functions
+#### <Generic linked list functions>
 * lstnew
 * lstdel / lstdelone
 * elemdel
@@ -61,6 +61,6 @@
 * lstiter
 * lstmap
 
-#### Array manipulation / examination
+#### <Array manipulation / examination>
 * free_arr
 * get_arr_size
