@@ -2,8 +2,7 @@
 ### personal standard function library for 42 School studies
 #### currently includes following functions:
 
-#### <string.h>
-##### [String Manipulation]
+#### [String Manipulation]
 * strcpy/strncpy
 * strcat/strncat
 * strlcat
@@ -18,7 +17,7 @@
 * strtrim
 * strsplit
 
-##### [String Examination]
+#### [String Examination]
 * strlen
 * strcmp/strncmp
 * strchr/strrchr
@@ -26,7 +25,7 @@
 * strequ/strnequ
 * wordcount
 
-##### [Memory Manipulation]
+#### [Memory Manipulation]
 * bzero
 * memalloc
 * memchr
@@ -37,23 +36,23 @@
 * memset
 * realloc
 
-#### <stdlib.h>
+#### [Numeric Conversions]
 * atoi
 * itoa
 
-#### <stdio.h>
+#### [File I/O]
 * get_next_line
 * putchar / putchar_fd
 * putstr/putstr_fd
 * putendl / putendl_fd
 * putnbr / putnbr_fd
 
-#### <ctype.h>
+#### [Character type checks]
 * isalnum / isalpha / isascii / isdigit / isspace / isprint
 * islower / isupper
 * tolower / toupper
 
-#### <Generic linked list functions>
+#### [Generic linked/list functions]
 * lstnew
 * lstdel / lstdelone
 * elemdel
@@ -61,6 +60,6 @@
 * lstiter
 * lstmap
 
-#### <Array manipulation / examination>
+#### [Array manipulation / examination]
 * free_arr
 * get_arr_size
