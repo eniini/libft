@@ -6,7 +6,7 @@
 /*   By: eniini <eniini@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/26 14:23:57 by eniini            #+#    #+#             */
-/*   Updated: 2020/08/16 21:18:30 by eniini           ###   ########.fr       */
+/*   Updated: 2020/10/01 16:29:15 by eniini           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ static char	**ft_dosplit(char const *s, char c, char **ret, size_t wordcount)
 		}
 		if (!(ret[j++] = ft_getstring(s, c, i)))
 		{
-			ft_free2d(ret);
+			ft_free_arr(ret);
 			return (NULL);
 		}
 		while (s[i] != c && s[i] != '\0')
