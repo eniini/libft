@@ -6,7 +6,7 @@
 /*   By: eniini <eniini@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/10 16:37:48 by eniini            #+#    #+#             */
-/*   Updated: 2020/10/01 16:23:56 by eniini           ###   ########.fr       */
+/*   Updated: 2020/10/16 08:58:49 by eniini           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,21 +14,22 @@
 # define LIBFT_H
 
 /*
-** stdlib included for an access to size_t definition.
+**	stdlib included for an access to size_t data type, NULL constant
+**	and memory allocation functions.
 */
 
 # include <stdlib.h>
 
 /*
-** Macro for standardizing open() calls.
+**	Macro for standardizing open() calls in G_N_L.
 */
 
 # define BUFF_SIZE 32
 
 /*
-** =========================
-** <string.h> (& extensions)
-** =========================
+**	=========================
+**	<string.h> (& extensions)
+**	=========================
 **
 **	[PART - 1: String Manipulation]
 */
@@ -70,7 +71,7 @@ char				*ft_strtrim(char const *s);
 char				**ft_strsplit(char const *s, char c);
 
 /*
-**	 [PART 2: String Examination]
+**	[PART 2: String Examination]
 */
 
 size_t				ft_strlen(const char *s);
@@ -94,7 +95,7 @@ int					ft_strnequ(char const *s1, char const *s2, size_t n);
 size_t				ft_wordcount(char const *s, char c);
 
 /*
-**	 [PART 3: Memory Manipulation]
+**	[PART 3: Memory Manipulation]
 */
 
 void				ft_bzero(void *s, size_t n);
@@ -117,18 +118,22 @@ void				*ft_memset(void *b, int c, size_t len);
 
 void				*ft_realloc(void *ptr, size_t size);
 
+void				ft_swap(void *a, void *b, size_t size);
+
 /*
-**	 [PART 4: Numeric Conversions]
+**	[PART 4: Numeric Conversions]
 */
 
 int					ft_atoi(const char *str);
 
 char				*ft_itoa(int n);
 
+int					ft_abs(int n);
+
 /*
-** ========================
-** <stdio.h> (& extensions)
-** ========================
+**	========================
+**	<stdio.h> (& extensions)
+**	========================
 */
 
 int					get_next_line(const int fd, char **line);
@@ -149,10 +154,12 @@ void				ft_putendl_fd(char const *s, int fd);
 
 void				ft_putnbr_fd(int n, int fd);
 
+void				ft_getout(const char *str, int ret);
+
 /*
-** =========
-** <ctype.h>
-** =========
+**	=========
+**	<ctype.h>
+**	=========
 */
 
 int					ft_isalnum(int c);
@@ -176,12 +183,12 @@ int					ft_toupper(int c);
 int					ft_tolower(int c);
 
 /*
-** =======
-** [EXTRA]
-** =======
+**	=======
+**	[EXTRA]
+**	=======
 **
-** Generic linked list struct and basic functions.
-** ft_lstdel(2) & ft_lstdelone(2) should call ft_elemdel(2) by default.
+**	Generic linked list struct and basic functions.
+**	ft_lstdel(2) & ft_lstdelone(2) should call ft_elemdel(2) by default.
 */
 
 typedef struct		s_list
@@ -208,11 +215,11 @@ t_list				*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 void				ft_elemdel(void *content, size_t size);
 
 /*
-** Array manipulation and examination.
+**	Array manipulation and examination.
 */
 
 void				ft_free_arr(char **arr);
 
-size_t 				ft_get_arr_size(char **arr);
+size_t				ft_get_arr_size(char **arr);
 
 #endif
