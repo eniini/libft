@@ -1,32 +1,31 @@
-# libft
-## recoding parts of standard C library
-### currently includes following functions:
+## libft
+### personal standard function library for 42 School studies
+#### currently includes following functions:
 
-### <string.h>
-##### [String Manipulation]
+#### [String Manipulation]
 * strcpy/strncpy
 * strcat/strncat
-* strlcat (BSD)
+* strlcat
 * strdup/strndup
-* strnew (Pascal)
-* strdel _(nonstandard)_
-* strclr _(nonstandard)_
-* striter/striteri _(nonstandard)_
-* strmap/strmapi _(nonstandard)_
-* strsub _(nonstandard)_
-* strjoin _(nonstandard)_
-* strtrim _(nonstandard)_
-* strsplit _(nonstandard)_
+* strnew
+* strdel
+* strclr
+* striter/striteri
+* strmap/strmapi
+* strsub
+* strjoin
+* strtrim
+* strsplit
 
-##### [String Examination]
+#### [String Examination]
 * strlen
 * strcmp/strncmp
 * strchr/strrchr
 * strstr/strnstr
-* strequ/strnequ _(nonstandard)_
-* wordcount _(nonstandard)_
+* strequ/strnequ
+* wordcount
 
-##### [Memory Manipulation]
+#### [Memory Manipulation]
 * bzero
 * memalloc
 * memchr
@@ -35,16 +34,32 @@
 * memdel
 * memmove
 * memset
+* realloc
 
-##### <stdlib.h>
+#### [Numeric Conversions]
 * atoi
-* itoa _(nonstandard)_
+* itoa
 
-### <stdio.h>
-* get_next_line _(getline without linefeed)_
-* putchar/putchar_fd _(fputc)_
-* putstr/putstr_fd _(fputs with null terminator)_
-* putendl _(puts)_ /putendl_fd
-* putnbr/putnbr_fd
+#### [File I/O]
+* get_next_line
+* putchar / putchar_fd
+* putstr/putstr_fd
+* putendl / putendl_fd
+* putnbr / putnbr_fd
 
-### <ctype.h>
+#### [Character type checks]
+* isalnum / isalpha / isascii / isdigit / isspace / isprint
+* islower / isupper
+* tolower / toupper
+
+#### [Generic linked/list functions]
+* lstnew
+* lstdel / lstdelone
+* elemdel
+* lstadd / lstaddl
+* lstiter
+* lstmap
+
+#### [Array manipulation / examination]
+* free_arr
+* get_arr_size
