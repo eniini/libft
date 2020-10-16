@@ -35,10 +35,12 @@
 * memmove
 * memset
 * realloc
+* swap
 
 #### [Numeric Conversions]
 * atoi
 * itoa
+* abs
 
 #### [File I/O]
 * get_next_line
@@ -46,6 +48,7 @@
 * putstr/putstr_fd
 * putendl / putendl_fd
 * putnbr / putnbr_fd
+* getout
 
 #### [Character type checks]
 * isalnum / isalpha / isascii / isdigit / isspace / isprint
