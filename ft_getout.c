@@ -14,11 +14,11 @@
 
 /*
 **	Prints [str] to standard output, then exits the program
-**	with the return value of [ret].
+**	with the (EXIT_FAILURE) status.
 */
 
-void	ft_getout(const char *str, int ret)
+void	ft_getout(const char *str)
 {
 	ft_putendl(str);
-	exit(ret);
+	exit(EXIT_FAILURE);
 }
