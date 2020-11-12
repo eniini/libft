@@ -154,7 +154,7 @@ void				ft_putendl_fd(char const *s, int fd);
 
 void				ft_putnbr_fd(int n, int fd);
 
-void				ft_getout(const char *str, int ret);
+void				ft_getout(const char *str);
 
 /*
 **	=========
