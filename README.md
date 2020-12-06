@@ -1,7 +1,5 @@
 ## libft
-### personal standard function library for 42 School studies
-### 42Project Score for libft - [![42Project Score for libft](https://badge42.herokuapp.com/api/project/eniini/Libft)](https://github.com/JaeSeoKim/badge42)
-### 42Project Score for get_next_line - [![42Project Score for get_next_line](https://badge42.herokuapp.com/api/project/eniini/GET_Next_Line)](https://github.com/JaeSeoKim/badge42)
+### Personal standard function library for 42 School studies
 #### currently includes following functions:
 
 #### [String Manipulation]
