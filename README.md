@@ -41,6 +41,8 @@
 * atoi
 * itoa
 * abs
+* clamp_i
+* clamp_d
 
 #### [File I/O]
 * get_next_line
@@ -70,7 +72,7 @@
 
 ####	[Graphics-related utility functions]
 
-* ft_i_lerp
-* ft_inverse_i_lerp
-* ft_d_lerp
-* ft_inverse_d_lerp
+* i_lerp
+* inverse_i_lerp
+* d_lerp
+* inverse_d_lerp
