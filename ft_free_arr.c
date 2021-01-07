@@ -6,14 +6,14 @@
 /*   By: eniini <eniini@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/16 21:16:42 by eniini            #+#    #+#             */
-/*   Updated: 2020/10/01 15:35:03 by eniini           ###   ########.fr       */
+/*   Updated: 2020/10/16 09:08:26 by eniini           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 /*
-** Frees all the elements inside a pointer array as well as the pointer.
+**	Frees all the elements inside a pointer array as well as the pointer.
 */
 
 void	ft_free_arr(char **arr)

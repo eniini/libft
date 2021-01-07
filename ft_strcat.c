@@ -6,17 +6,17 @@
 /*   By: eniini <eniini@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/25 12:58:03 by eniini            #+#    #+#             */
-/*   Updated: 2020/07/25 15:12:01 by eniini           ###   ########.fr       */
+/*   Updated: 2020/10/16 09:16:07 by eniini           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 /*
 **	Appends a copy of the valid string [s2] to the end of the valid string [s1]
 **	then adds a terminating `\0' and returns a pointer to it.
 **	[s1] must have sufficient space to hold the result.
 */
-
-#include "libft.h"
 
 char	*ft_strcat(char *s1, const char *s2)
 {

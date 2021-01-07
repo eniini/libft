@@ -6,11 +6,10 @@
 /*   By: eniini <eniini@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/23 11:45:19 by eniini            #+#    #+#             */
-/*   Updated: 2020/07/18 18:47:53 by eniini           ###   ########.fr       */
+/*   Updated: 2020/10/16 09:18:46 by eniini           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
 #include "libft.h"
 
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))

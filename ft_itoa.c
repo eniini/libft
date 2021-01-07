@@ -6,17 +6,16 @@
 /*   By: eniini <eniini@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/12 16:21:30 by eniini            #+#    #+#             */
-/*   Updated: 2020/07/25 14:18:46 by eniini           ###   ########.fr       */
+/*   Updated: 2020/10/16 09:10:02 by eniini           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 /*
 **	Returns a fresh valid string representing the integer [n] given as argument.
 **	If the allocation fails, the function returns NULL.
 */
-
-#include <stdlib.h>
-#include "libft.h"
 
 static int	ft_numlen(int n)
 {

@@ -6,7 +6,7 @@
 /*   By: eniini <eniini@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/10 16:37:48 by eniini            #+#    #+#             */
-/*   Updated: 2020/10/16 08:58:49 by eniini           ###   ########.fr       */
+/*   Updated: 2020/11/29 18:12:27 by eniini           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -130,6 +130,10 @@ char				*ft_itoa(int n);
 
 int					ft_abs(int n);
 
+int					ft_clamp_i(int value, int min, int max);
+
+double				ft_clamp_d(double value, double min, double max);
+
 /*
 **	========================
 **	<stdio.h> (& extensions)
@@ -154,7 +158,7 @@ void				ft_putendl_fd(char const *s, int fd);
 
 void				ft_putnbr_fd(int n, int fd);
 
-void				ft_getout(const char *str, int ret);
+void				ft_getout(const char *str);
 
 /*
 **	=========
@@ -221,5 +225,17 @@ void				ft_elemdel(void *content, size_t size);
 void				ft_free_arr(char **arr);
 
 size_t				ft_get_arr_size(char **arr);
+
+/*
+**	Graphics-related utility functions.
+*/
+
+int					ft_i_lerp(int a, int b, double p);
+
+double				ft_inverse_i_lerp(int a, int b, int x);
+
+double				ft_d_lerp(double a, double b, double p);
+
+double				ft_inverse_d_lerp(double a, double b, double x);
 
 #endif

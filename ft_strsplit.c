@@ -6,12 +6,16 @@
 /*   By: eniini <eniini@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/26 14:23:57 by eniini            #+#    #+#             */
-/*   Updated: 2020/10/01 16:29:15 by eniini           ###   ########.fr       */
+/*   Updated: 2021/01/07 16:00:29 by eniini           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
 #include "libft.h"
+
+/*
+**	Returns a nul-terminated array of substrings copied from [s]
+**	delimited by char [c].
+*/
 
 static char	*ft_getstring(char const *s, char c, size_t start)
 {

@@ -6,9 +6,11 @@
 /*   By: eniini <eniini@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/08 16:28:18 by eniini            #+#    #+#             */
-/*   Updated: 2020/07/25 13:58:18 by eniini           ###   ########.fr       */
+/*   Updated: 2020/10/16 09:11:58 by eniini           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 /*
 **	Creates a new link which (content) and (content_size) are initialized
@@ -17,9 +19,6 @@
 **	If the [content] is NULL, link's (content) is NULL and its (content_size)
 **	is 0 even if [content_size] isn’t.
 */
-
-#include <stdlib.h>
-#include "libft.h"
 
 t_list	*ft_lstnew(void const *content, size_t content_size)
 {

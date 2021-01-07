@@ -6,17 +6,16 @@
 /*   By: eniini <eniini@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/10 13:19:21 by eniini            #+#    #+#             */
-/*   Updated: 2020/07/25 15:01:35 by eniini           ###   ########.fr       */
+/*   Updated: 2020/10/16 09:17:28 by eniini           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 /*
 **	allocates sufficient memory for a copy of the string [s1], does the copy,
 **	and returns a pointer to it. If malloc fails, NULL is returned.
 */
-
-#include <stdlib.h>
-#include "libft.h"
 
 char	*ft_strdup(const char *s1)
 {

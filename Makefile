@@ -6,7 +6,7 @@
 #    By: eniini <eniini@student.hive.fi>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/06/11 10:42:46 by eniini            #+#    #+#              #
-#    Updated: 2020/10/14 17:52:51 by eniini           ###   ########.fr        #
+#    Updated: 2020/11/30 16:11:15 by eniini           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,23 +32,32 @@ SRC = ft_memset.c ft_bzero.c ft_memcpy.c ft_memccpy.c ft_memmove.c \
 	ft_lstiter.c ft_lstmap.c \
 	ft_wordcount.c ft_islower.c ft_isupper.c ft_isspace.c \
 	ft_strndup.c ft_elemdel.c ft_free_arr.c ft_realloc.c get_next_line.c \
-	ft_get_arr_size.c ft_swap.c ft_abs.c ft_getout.c
+	ft_get_arr_size.c ft_swap.c ft_abs.c ft_getout.c \
+	ft_i_lerp.c ft_d_lerp.c ft_inverse_i_lerp.c ft_inverse_d_lerp.c \
+	ft_clamp_i.c ft_clamp_d.c
 
 OBJ = $(SRC:.c=.o)
+
+CYAN = $('\033[0;36m')
+
+NOCOL = $('\033[0m')
 
 all : $(NAME)
 
 $(NAME) : $(OBJ)
-	ar rcs $(NAME) $(OBJ)
+	@ar rcs $(NAME) $(OBJ)
+	@echo "\033[0;36m[libft] libft archive created\033[0m"
 
 $(OBJ) : $(SRCS)
-	$(CC) $(CFLAGS) $(SRC)
+	@$(CC) $(CFLAGS) $(SRC)
 
 clean :
-	rm -f $(OBJ)
+	@rm -f $(OBJ)
+	@echo "\033[0;36m[libft] .obj files removed\033[0m"
 
 fclean : clean
-	rm -f $(NAME)
+	@rm -f $(NAME)
+	@echo "\033[0;36m[libft] archive removed\033[0m"
 
 re : fclean all
 

@@ -6,12 +6,16 @@
 /*   By: eniini <eniini@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/15 20:30:56 by eniini            #+#    #+#             */
-/*   Updated: 2020/07/23 13:03:19 by eniini           ###   ########.fr       */
+/*   Updated: 2021/01/07 15:56:03 by eniini           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
 #include "libft.h"
+
+/*
+**	Returns a copy of string [s] without the preceding and trailing
+**	whitespace characters.
+*/
 
 static char	*ft_trimcpy(char const *s, size_t max, size_t min)
 {

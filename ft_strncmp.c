@@ -6,9 +6,11 @@
 /*   By: eniini <eniini@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/10 13:41:43 by eniini            #+#    #+#             */
-/*   Updated: 2020/07/25 15:33:31 by eniini           ###   ########.fr       */
+/*   Updated: 2020/10/16 09:19:05 by eniini           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 /*
 **	Lexicographically compares compares not more than n characters in
@@ -21,8 +23,6 @@
 **	Comparison is done with unsigned characters,
 **	so that `\200' is greater than `\0'.
 */
-
-#include "libft.h"
 
 int		ft_strncmp(const char *s1, const char *s2, size_t n)
 {

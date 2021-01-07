@@ -6,9 +6,11 @@
 /*   By: eniini <eniini@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/15 14:19:43 by eniini            #+#    #+#             */
-/*   Updated: 2020/07/26 01:08:21 by eniini           ###   ########.fr       */
+/*   Updated: 2020/10/16 09:11:43 by eniini           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 /*
 **	Iterate the first link to save new link's head, then loop until lst = NULL
@@ -18,8 +20,6 @@
 **	If function fails to allocate memory for a new element and returns NULL,
 **	all previously created lists are freed & deleted.
 */
-
-#include "libft.h"
 
 t_list	*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem))
 {

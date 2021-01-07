@@ -6,9 +6,11 @@
 /*   By: eniini <eniini@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/10 13:41:43 by eniini            #+#    #+#             */
-/*   Updated: 2020/07/25 15:33:03 by eniini           ###   ########.fr       */
+/*   Updated: 2020/10/16 09:16:31 by eniini           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 /*
 **	Lexicographically compares the null-terminated strings [s1] and [s2].
@@ -19,8 +21,6 @@
 **	Comparison is done with unsigned characters,
 **	so that `\200' is greater than `\0'.
 */
-
-#include "libft.h"
 
 int		ft_strcmp(const char *s1, const char *s2)
 {

@@ -6,11 +6,10 @@
 /*   By: eniini <eniini@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/16 13:51:21 by eniini            #+#    #+#             */
-/*   Updated: 2020/07/23 12:34:48 by eniini           ###   ########.fr       */
+/*   Updated: 2020/10/16 09:19:29 by eniini           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
 #include "libft.h"
 
 char	*ft_strndup(const char *s1, size_t n)

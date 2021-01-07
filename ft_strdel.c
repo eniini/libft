@@ -6,11 +6,11 @@
 /*   By: eniini <eniini@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/23 10:04:00 by eniini            #+#    #+#             */
-/*   Updated: 2020/07/16 13:28:05 by eniini           ###   ########.fr       */
+/*   Updated: 2020/10/16 09:17:07 by eniini           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "libft.h"
 
 void	ft_strdel(char **as)
 {

@@ -6,11 +6,10 @@
 /*   By: eniini <eniini@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/23 10:21:18 by eniini            #+#    #+#             */
-/*   Updated: 2020/07/18 18:47:44 by eniini           ###   ########.fr       */
+/*   Updated: 2020/10/16 09:18:38 by eniini           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
 #include "libft.h"
 
 char	*ft_strmap(char const *s, char (*f)(char))

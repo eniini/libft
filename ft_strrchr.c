@@ -6,9 +6,11 @@
 /*   By: eniini <eniini@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/30 18:48:28 by eniini            #+#    #+#             */
-/*   Updated: 2020/07/25 15:20:25 by eniini           ###   ########.fr       */
+/*   Updated: 2020/10/16 09:21:48 by eniini           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 /*
 **	Locates the last occurrence of [c] (converted to a char) in string [s].
@@ -18,8 +20,6 @@
 **	returns a pointer to the located character,
 **	or NULL if the character does not appear in the string.
 */
-
-#include "libft.h"
 
 char	*ft_strrchr(const char *s, int c)
 {

@@ -6,7 +6,7 @@
 /*   By: eniini <eniini@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/14 17:37:00 by eniini            #+#    #+#             */
-/*   Updated: 2020/10/14 18:17:21 by eniini           ###   ########.fr       */
+/*   Updated: 2021/01/07 16:05:37 by eniini           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,11 @@
 
 /*
 **	Prints [str] to standard output, then exits the program
-**	with the return value of [ret].
+**	with the (EXIT_FAILURE) status.
 */
 
-void	ft_getout(const char *str, int ret)
+void	ft_getout(const char *str)
 {
 	ft_putendl(str);
-	exit(ret);
+	exit(EXIT_FAILURE);
 }

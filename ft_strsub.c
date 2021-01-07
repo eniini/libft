@@ -6,11 +6,10 @@
 /*   By: eniini <eniini@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/18 18:14:24 by eniini            #+#    #+#             */
-/*   Updated: 2020/07/13 17:25:28 by eniini           ###   ########.fr       */
+/*   Updated: 2020/10/16 09:22:33 by eniini           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
 #include "libft.h"
 
 char	*ft_strsub(char const *s, unsigned int start, size_t len)

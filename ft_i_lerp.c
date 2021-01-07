@@ -1,36 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*   ft_i_lerp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: eniini <eniini@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/07/03 16:06:56 by eniini            #+#    #+#             */
-/*   Updated: 2020/10/16 09:12:54 by eniini           ###   ########.fr       */
+/*   Created: 2020/11/19 22:04:33 by eniini            #+#    #+#             */
+/*   Updated: 2020/11/22 20:11:33 by eniini           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 /*
-**	Locates the first occurrence of [c] (converted to an unsigned char) in
-**	string [s]. Returns a pointer to the byte located, or NULL if no such byte
-**	exists within [n] bytes.
+**	Lineal interpolation calculation that returns an integer.
+**	Cast to int is warranted as [p * (b - a)] returns a double due to coercion.
 */
 
-void	*ft_memchr(const void *s, int c, size_t n)
+int		ft_i_lerp(int a, int b, double p)
 {
-	size_t		i;
-	const char	*str;
-
-	str = s;
-	i = 0;
-	while (i < n)
-	{
-		if ((unsigned char)str[i] == (unsigned char)c)
-			return ((void *)&str[i]);
-		else
-			i++;
-	}
-	return (NULL);
+	return (a + (int)(p * (b - a)));
 }

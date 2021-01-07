@@ -6,17 +6,17 @@
 /*   By: eniini <eniini@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/25 17:45:37 by eniini            #+#    #+#             */
-/*   Updated: 2020/07/25 15:11:49 by eniini           ###   ########.fr       */
+/*   Updated: 2020/10/16 09:18:56 by eniini           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 /*
 **	Appends not more than [n] characters from [s2] to the end of [s1],
 **	then adds a terminating `\0' and returns a pointer to [s1].
 **	[s1] must have sufficient space to hold the result.
 */
-
-#include "libft.h"
 
 char	*ft_strncat(char *s1, const char *s2, size_t n)
 {

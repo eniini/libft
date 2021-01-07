@@ -6,11 +6,15 @@
 /*   By: eniini <eniini@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/16 13:24:33 by eniini            #+#    #+#             */
-/*   Updated: 2020/07/18 17:07:27 by eniini           ###   ########.fr       */
+/*   Updated: 2021/01/07 15:54:07 by eniini           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+/*
+**	Returns the n of symbol sequences delimited by char [c] in the string [s].
+*/
 
 size_t	ft_wordcount(char const *s, char c)
 {

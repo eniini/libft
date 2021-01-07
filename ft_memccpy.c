@@ -6,9 +6,11 @@
 /*   By: eniini <eniini@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/03 15:52:11 by eniini            #+#    #+#             */
-/*   Updated: 2020/07/25 15:33:13 by eniini           ###   ########.fr       */
+/*   Updated: 2020/10/16 09:12:34 by eniini           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 /*
 **	Copies bytes from string [src] to string [dst].
@@ -18,8 +20,6 @@
 **
 **	Overlap of [src] and [dst] strings results in undefined behaviour.
 */
-
-#include "libft.h"
 
 void	*ft_memccpy(void *dst, const void *src, int c, size_t n)
 {

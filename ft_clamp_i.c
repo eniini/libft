@@ -1,36 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*   ft_clamp_i.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: eniini <eniini@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/07/03 16:06:56 by eniini            #+#    #+#             */
-/*   Updated: 2020/10/16 09:12:54 by eniini           ###   ########.fr       */
+/*   Created: 2020/11/29 18:00:28 by eniini            #+#    #+#             */
+/*   Updated: 2020/11/29 18:04:26 by eniini           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-/*
-**	Locates the first occurrence of [c] (converted to an unsigned char) in
-**	string [s]. Returns a pointer to the byte located, or NULL if no such byte
-**	exists within [n] bytes.
-*/
-
-void	*ft_memchr(const void *s, int c, size_t n)
+int		ft_clamp_i(int value, int min, int max)
 {
-	size_t		i;
-	const char	*str;
+	int		i;
 
-	str = s;
-	i = 0;
-	while (i < n)
-	{
-		if ((unsigned char)str[i] == (unsigned char)c)
-			return ((void *)&str[i]);
-		else
-			i++;
-	}
-	return (NULL);
+	i = value < min ? min : value;
+	return (i > max ? max : i);
 }

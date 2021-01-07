@@ -6,9 +6,11 @@
 /*   By: eniini <eniini@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/30 12:59:21 by eniini            #+#    #+#             */
-/*   Updated: 2020/07/25 15:07:30 by eniini           ###   ########.fr       */
+/*   Updated: 2020/10/16 09:19:16 by eniini           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 /*
 **	Copies at most [len] characters the string [src] to [dst] and returns [dst].
@@ -16,8 +18,6 @@
 **	is filled with `\0' characters. Otherwise, dst is not terminated.
 **	Source and destination should not overlap, as the behavior is undefined.
 */
-
-#include "libft.h"
 
 char	*ft_strncpy(char *dst, const char *src, size_t len)
 {

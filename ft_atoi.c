@@ -6,15 +6,15 @@
 /*   By: eniini <eniini@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/12 10:38:23 by eniini            #+#    #+#             */
-/*   Updated: 2020/07/25 14:18:21 by eniini           ###   ########.fr       */
+/*   Updated: 2020/10/16 09:07:13 by eniini           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 /*
 **	Converts the string [str] to int representation.
 */
-
-#include "libft.h"
 
 int		ft_atoi(const char *str)
 {

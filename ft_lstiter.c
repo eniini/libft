@@ -6,15 +6,15 @@
 /*   By: eniini <eniini@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/15 14:07:38 by eniini            #+#    #+#             */
-/*   Updated: 2020/07/25 13:51:00 by eniini           ###   ########.fr       */
+/*   Updated: 2020/10/16 09:11:28 by eniini           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 /*
 **	Iterates the list [lst] and applies the function [f] to each link.
 */
-
-#include "libft.h"
 
 void	ft_lstiter(t_list *lst, void (*f)(t_list *elem))
 {

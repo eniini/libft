@@ -6,9 +6,11 @@
 /*   By: eniini <eniini@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/30 18:39:22 by eniini            #+#    #+#             */
-/*   Updated: 2020/07/25 15:19:12 by eniini           ###   ########.fr       */
+/*   Updated: 2020/10/16 09:16:17 by eniini           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 /*
 **	Locates the first occurrence of [c] (converted to a char) in string [s].
@@ -18,8 +20,6 @@
 **	returns a pointer to the located character,
 **	or NULL if the character does not appear in the string.
 */
-
-#include "libft.h"
 
 char	*ft_strchr(const char *s, int c)
 {

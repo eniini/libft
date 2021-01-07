@@ -6,7 +6,7 @@
 /*   By: eniini <eniini@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/04 12:03:57 by eniini            #+#    #+#             */
-/*   Updated: 2020/08/17 09:58:42 by eniini           ###   ########.fr       */
+/*   Updated: 2020/10/16 09:23:23 by eniini           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@
 #include "libft.h"
 
 /*
-** soft FD limit. current system's soft cap can be checked with 'ulimit -n'
+**	soft FD limit. current system's soft cap can be checked with 'ulimit -n'
 */
 
 #define FD_MAX 4096

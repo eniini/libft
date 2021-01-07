@@ -6,11 +6,10 @@
 /*   By: eniini <eniini@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/18 14:29:24 by eniini            #+#    #+#             */
-/*   Updated: 2020/07/30 16:10:22 by eniini           ###   ########.fr       */
+/*   Updated: 2020/10/16 09:17:59 by eniini           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
 #include "libft.h"
 
 char	*ft_strjoin(char const *s1, char const *s2)

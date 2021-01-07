@@ -6,12 +6,14 @@
 /*   By: eniini <eniini@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/30 17:07:22 by eniini            #+#    #+#             */
-/*   Updated: 2020/07/25 15:33:40 by eniini           ###   ########.fr       */
+/*   Updated: 2020/10/16 09:21:30 by eniini           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
+
 /*
-**	locates the first occurrence of the null-terminated string [needle] \
+**	locates the first occurrence of the null-terminated string [needle]
 **	in the null-terminated string [haystack],
 **	where not more than [len] characters are searched.
 **	Characters that appear after a `\0' are not searched.
@@ -20,8 +22,6 @@
 **	if [needle] occurs nowhere in [haystack], NULL is returned; Otherwise
 **	a pointer to first character of [needle] in [haystack] is returned.
 */
-
-#include "libft.h"
 
 char	*ft_strnstr(const char *stack, const char *ndl, size_t len)
 {
