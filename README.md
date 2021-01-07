@@ -66,3 +66,11 @@
 #### [Array manipulation / examination]
 * free_arr
 * get_arr_size
+
+
+####	[Graphics-related utility functions]
+
+* ft_i_lerp
+* ft_inverse_i_lerp
+* ft_d_lerp
+* ft_inverse_d_lerp
