@@ -1,6 +1,7 @@
 ## libft
-### Personal standard function library for 42 School studies
-#### currently includes following functions:
+### General utility library for 42 School studies
+Mainly re-writing standard C library functions both as a study of Unix pipeline and C's core elements and an essential toolkit for more complex projects.
+Current version of libft uses stdlib/unistd headers only for necessary datatypes, memory management & file IO. Currently includes:
 
 #### [String Manipulation]
 * strcpy/strncpy
