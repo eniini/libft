@@ -46,7 +46,7 @@ Currently includes:
 * memalloc
 * memchr
 * memcmp
-* memcpy/memccpy
+* memcpy / memccpy
 * memdel
 * memmove
 * memset
