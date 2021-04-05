@@ -1,24 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_getout.c                                        :+:      :+:    :+:   */
+/*   ft_uitoa.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: eniini <eniini@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/14 17:37:00 by eniini            #+#    #+#             */
-/*   Updated: 2021/01/07 16:05:37 by eniini           ###   ########.fr       */
+/*   Created: 2021/02/03 12:21:49 by eniini            #+#    #+#             */
+/*   Updated: 2021/02/19 16:06:13 by eniini           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 /*
-**	Prints [str] to standard output, then exits the program
-**	with the (EXIT_FAILURE) status.
+**	Converts an unsigned integer [ui] to its string representation.
 */
 
-void	ft_getout(const char *str)
+char	*ft_uitoa(size_t ui)
 {
-	ft_putendl(str);
-	exit(EXIT_FAILURE);
+	size_t	uix;
+	int		i;
+	char	*s;
+
+	uix = ui;
+	i = 1;
+	while (uix > 9 && i++)
+		uix /= 10;
+	s = ft_strnew(i);
+	while (1)
+	{
+		s[--i] = ui % 10 + '0';
+		if ((ui /= 10) == 0)
+			break ;
+	}
+	return (s);
 }

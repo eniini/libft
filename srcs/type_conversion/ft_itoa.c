@@ -6,7 +6,7 @@
 /*   By: eniini <eniini@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/12 16:21:30 by eniini            #+#    #+#             */
-/*   Updated: 2020/10/16 09:10:02 by eniini           ###   ########.fr       */
+/*   Updated: 2021/03/10 13:00:22 by eniini           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,65 +17,46 @@
 **	If the allocation fails, the function returns NULL.
 */
 
-static int	ft_numlen(int n)
+static int	get_len(intmax_t n)
 {
-	int		i;
+	int		len;
 
-	i = 1;
+	len = 1;
 	if (n < 0)
 	{
-		if (n == -2147483648)
-			n = 2147483647;
 		n = -n;
-		i++;
+		len++;
 	}
-	while (n > 9)
+	while (n >= 10)
 	{
 		n /= 10;
-		i++;
+		len++;
 	}
-	return (i);
+	return (len);
 }
 
-static char	*ft_recursive_modulo(int n, int i, char *str, int strlen)
+char		*ft_itoa(intmax_t n)
 {
-	if (n <= 9)
-	{
-		str[(strlen - 1) - i] = (48 + n);
-		return (str);
-	}
-	else
-	{
-		str[(strlen - 1) - i] = (48 + (n % 10));
-		i++;
-		ft_recursive_modulo(n / 10, i, str, strlen);
-		return (str);
-	}
-}
+	char	*s;
+	int		len;
 
-char		*ft_itoa(int n)
-{
-	char	*result;
-	int		i;
-	int		strlen;
-
-	if (n == -2147483648)
+	if (n == INTMAX_MIN)
 	{
-		if (!(result = (char*)malloc(sizeof(char) * 12)))
+		if (!(s = ft_strdup("-9223372036854775808")))
 			return (NULL);
-		result = ft_strcpy(result, "-2147483648");
-		return (result);
+		return (s);
 	}
-	i = 0;
-	strlen = ft_numlen(n);
-	if (!(result = (char*)malloc(sizeof(char) * strlen + 1)))
+	len = get_len(n);
+	if (!(s = ft_strnew(len)))
 		return (NULL);
 	if (n < 0)
+		s[0] = '-';
+	n = (n < 0) ? -n : n;
+	while (1)
 	{
-		result[0] = '-';
-		n = -n;
+		s[--len] = (n % 10) + '0';
+		if ((n /= 10) == 0)
+			break ;
 	}
-	result = ft_recursive_modulo(n, i, result, strlen);
-	result[strlen] = '\0';
-	return (result);
+	return (s);
 }

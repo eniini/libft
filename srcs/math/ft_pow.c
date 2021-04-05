@@ -1,22 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_elemdel.c                                       :+:      :+:    :+:   */
+/*   ft_pow.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: eniini <eniini@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/07/26 01:08:54 by eniini            #+#    #+#             */
-/*   Updated: 2020/10/16 09:07:56 by eniini           ###   ########.fr       */
+/*   Created: 2021/02/09 12:59:51 by eniini            #+#    #+#             */
+/*   Updated: 2021/02/19 16:05:04 by eniini           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+/*
+**	Exponentially multiplies base integer [i] to the power of [p].
+**	x^0 is always 1.
+*/
 
-void	ft_elemdel(void *content, size_t size)
+long long int	ft_pow(int i, unsigned int p)
 {
-	if (content != NULL)
-	{
-		(void)size;
-		free(content);
-	}
+	if (!p)
+		return (1);
+	return (i * ft_pow(i, --p));
 }
