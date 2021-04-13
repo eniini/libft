@@ -6,7 +6,7 @@
 /*   By: eniini <eniini@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/04 12:51:34 by eniini            #+#    #+#             */
-/*   Updated: 2021/04/01 21:46:03 by eniini           ###   ########.fr       */
+/*   Updated: 2021/04/09 18:12:34 by eniini           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,31 +17,27 @@
 
 #include "libft.h"
 
+#include <stdio.h>
+
 /*
 **	Converts the fractional part of the float into its string representation.
-**	If precision is larger than the resulting conversion,
-**	additional zeroes are added.
 */
 
 static char			*get_fractional(long double ld, unsigned int p, char *ret)
 {
-	int			zero_len;
+	size_t		i;
 	char		*s;
-	char		*zero_s;
 
 	ft_strcat(ret, ".");
-	s = ft_uitoa((size_t)(ft_pow(10, p) * (ld - (size_t)ld)));
+	s = ft_strnew(p + 1);
+	i = 1;
+	while (i <= p)
+	{
+		s[i - 1] = (size_t)(ft_pow(10, i) * (ld - (size_t)ld)) % 10 + '0';
+		i++;
+	}
 	if (!s)
 		return (NULL);
-	zero_len = p - ft_strlen(s);
-	if (zero_len > 0)
-	{
-		if (!(zero_s = ft_strnew(zero_len + 1)))
-			return (NULL);
-		ft_memset(zero_s, '0', zero_len);
-		ft_strncat(ret, zero_s, zero_len);
-		free(zero_s);
-	}
 	ft_strcat(ret, s);
 	free(s);
 	return (ret);
@@ -142,13 +138,13 @@ char				*ft_ftoa(long double f, unsigned int prec)
 {
 	t_bool		negative;
 
-	negative = test_negative((float)f);
+	if (!(f == f))
+		return (ft_strdup("nan"));
 	if (f == (1.0 / 0.0))
 		return (ft_strdup("inf"));
 	if (f == (-1.0 / 0.0))
 		return (ft_strdup("-inf"));
-	if (!(f == f))
-		return (ft_strdup("nan"));
+	negative = test_negative((float)f);
 	if (f < 0)
 		f = -f;
 	return (compile(f, prec, negative));
