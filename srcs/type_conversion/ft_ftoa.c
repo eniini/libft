@@ -17,8 +17,6 @@
 
 #include "libft.h"
 
-#include <stdio.h>
-
 /*
 **	Converts the fractional part of the float into its string representation.
 */
