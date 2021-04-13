@@ -1,49 +1,17 @@
 ## libft
 ### General utility library for 42 School studies
-Mainly re-writing standard C library functions both as a study of Unix pipeline and C's core elements and an essential toolkit for more complex projects.
-Current version of libft uses stdlib/unistd headers only for necessary datatypes, memory management & file IO. Currently includes:
+Gradually rewriting standard C library functions as a study of Unix pipeline and languages' core elements that also doubles as the fundamental toolkit for more complex 42 curriculum projects. 
+Current version of libft uses headers only for the necessary datatypes, memory management and file I/O.  
+Currently includes:  
 
-#### [String Manipulation]
-* strcpy/strncpy
-* strcat/strncat
-* strlcat
-* strdup/strndup
-* strnew
-* strdel
-* strclr
-* striter/striteri
-* strmap/strmapi
-* strsub
-* strjoin
-* strtrim
-* strsplit
+#### [Array manipulation / examination]
+* free_arr
+* get_arr_size
 
-#### [String Examination]
-* strlen
-* strcmp/strncmp
-* strchr/strrchr
-* strstr/strnstr
-* strequ/strnequ
-* wordcount
-
-#### [Memory Manipulation]
-* bzero
-* memalloc
-* memchr
-* memcmp
-* memcpy/memccpy
-* memdel
-* memmove
-* memset
-* realloc
-* swap
-
-#### [Numeric Conversions]
-* atoi
-* itoa
-* abs
-* clamp_i
-* clamp_d
+#### [Character type checks]
+* isalnum / isalpha / isascii / isdigit / isspace / isprint
+* islower / isupper
+* tolower / toupper
 
 #### [File I/O]
 * get_next_line
@@ -51,14 +19,15 @@ Current version of libft uses stdlib/unistd headers only for necessary datatypes
 * putstr/putstr_fd
 * putendl / putendl_fd
 * putnbr / putnbr_fd
-* getout
 
-#### [Character type checks]
-* isalnum / isalpha / isascii / isdigit / isspace / isprint
-* islower / isupper
-* tolower / toupper
+####	[GFX utility functions]
 
-#### [Generic linked/list functions]
+* i_lerp
+* inverse_i_lerp
+* d_lerp
+* inverse_d_lerp
+
+#### [Generic linked list functions]
 * lstnew
 * lstdel / lstdelone
 * elemdel
@@ -66,14 +35,56 @@ Current version of libft uses stdlib/unistd headers only for necessary datatypes
 * lstiter
 * lstmap
 
-#### [Array manipulation / examination]
-* free_arr
-* get_arr_size
+#### [Math utility tools]
+* abs
+* clamp_i
+* clamp_d
+* pow
 
+#### [Memory Manipulation]
+* bzero
+* memalloc
+* memchr
+* memcmp
+* memcpy / memccpy
+* memdel
+* memmove
+* memset
+* realloc
+* swap
 
-####	[Graphics-related utility functions]
+#### [Process Control]
+* getout
 
-* i_lerp
-* inverse_i_lerp
-* d_lerp
-* inverse_d_lerp
+#### [String Manipulation / Examination]
+* strcpy / strncpy
+* strcat / strncat
+* strlcat
+* strdup/strndup
+* strnew
+* strdel
+* strclr
+* striter / striteri
+* strmap / strmapi
+* strsub
+* strjoin
+* strtrim
+* strsplit
+* strlen
+* strcmp / strncmp
+* strchr / strrchr
+* strstr / strnstr
+* strequ / strnequ
+* wordcount
+
+#### [Wide Character (UTF-8) IO & Utility]
+* putwchar
+* putwstr
+* wcharlen
+* wstrlen / wstrnlen
+
+#### [Type Conversions]
+* atoi
+* ftoa
+* itoa / itoa_base 
+* uitoa / uitoa_base
