@@ -1,23 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_i_lerp.c                                        :+:      :+:    :+:   */
+/*   ft_wstrnlen.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: eniini <eniini@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/19 22:04:33 by eniini            #+#    #+#             */
-/*   Updated: 2021/04/20 13:50:01 by eniini           ###   ########.fr       */
+/*   Created: 2021/04/21 11:51:20 by eniini            #+#    #+#             */
+/*   Updated: 2021/04/21 11:56:02 by eniini           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 /*
-**	Lineal interpolation calculation that returns an integer.
-**	Cast to int is warranted as [p * (b - a)] returns a double due to coercion.
+**	Returns the sum byte length of [n] characters of the wide string, or
+**	until nul-terminator is reached (which will not be counted).
 */
 
-int	ft_i_lerp(int a, int b, double p)
+size_t	ft_wstrnlen(const wchar_t *wstr, size_t n)
 {
-	return (a + (int)(p * (b - a)));
+	size_t	strlen;
+
+	strlen = 0;
+	while (*wstr != L'\0' && n)
+	{
+		strlen += ft_wcharlen((wint_t)(*wstr));
+		n--;
+		wstr++;
+	}
+	return (strlen);
 }

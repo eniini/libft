@@ -6,7 +6,7 @@
 #    By: eniini <eniini@student.hive.fi>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/06/11 10:42:46 by eniini            #+#    #+#              #
-#    Updated: 2021/04/01 20:56:09 by eniini           ###   ########.fr        #
+#    Updated: 2021/04/21 14:40:10 by eniini           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -105,27 +105,38 @@ SRC = array_utils/ft_free_arr.c \
 	wchar_utils/ft_putwchar.c \
 	wchar_utils/ft_putwstr.c \
 	wchar_utils/ft_wcharlen.c \
-	wchar_utils/ft_wstrlen.c
+	wchar_utils/ft_wstrlen.c \
+	wchar_utils/ft_wstrnlen.c
 
-OBJ = $(notdir $(SRC:.c=.o))
+#object files
+OBJ_DIR = ./objs
+OBJ = $(addprefix $(OBJ_DIR)/,$(notdir $(SRC:.c=.o)))
 
 #colors
 CYAN = \033[0;36m
-NOCOL = \033[0m
+NC = \033[0m
+#clear line, move backwards x columns
+RESET	= \033[1K\033[100D
 
 .PHONY : all clean fclean re
 
-all :
-	@$(CC) $(CFLAGS) -I $(INC_DIR) -c $(addprefix $(SRC_DIR)/,$(SRC))
+all : $(NAME)
+
+$(OBJ_DIR)/%.o:$(addprefix $(SRC_DIR)/,$(SRC))
+	@mkdir -p $(OBJ_DIR)
+	@echo -ne "$(CYAN)."
+	@$(CC) $(CFLAGS) -I $(INC_DIR) -o $@ -c $<
+
+$(NAME) : $(OBJ)
 	@ar rcs $(NAME) $(OBJ)
-	@echo "${CYAN}[libft] libft archive created${NOCOL}"
+	@echo -e "$(CYAN)$(RESET)[libft] library built!$(NC)"
 
 clean :
-	@rm -f $(OBJ)
-	@echo "${CYAN}[libft] .obj files removed${NOCOL}"
+	@rm -rf $(OBJ_DIR)
+	@echo -e "$(CYAN)[libft] object files removed$(NC)"
 
 fclean : clean
 	@rm -f $(NAME)
-	@echo "${CYAN}[libft] archive removed${NOCOL}"
+	@echo -e "$(CYAN)[libft] archive removed$(NC)"
 
 re : fclean all

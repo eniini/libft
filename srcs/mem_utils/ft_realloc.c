@@ -6,7 +6,7 @@
 /*   By: eniini <eniini@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/19 19:14:23 by eniini            #+#    #+#             */
-/*   Updated: 2020/10/16 09:15:51 by eniini           ###   ########.fr       */
+/*   Updated: 2021/04/20 14:11:15 by eniini           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,8 @@ void	*ft_realloc(void *ptr, size_t size)
 		free(ptr);
 		return (NULL);
 	}
-	if (!(newptr = malloc(size)))
+	newptr = malloc(size);
+	if (!newptr)
 		return (NULL);
 	if (!(ft_memcpy(newptr, ptr, size)))
 		return (NULL);

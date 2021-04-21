@@ -6,7 +6,7 @@
 /*   By: eniini <eniini@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/04 12:51:34 by eniini            #+#    #+#             */
-/*   Updated: 2021/04/09 18:12:34 by eniini           ###   ########.fr       */
+/*   Updated: 2021/04/20 15:32:33 by eniini           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@
 **	Converts the fractional part of the float into its string representation.
 */
 
-static char			*get_fractional(long double ld, unsigned int p, char *ret)
+static char	*get_fractional(long double ld, unsigned int p, char *ret)
 {
 	size_t		i;
 	char		*s;
@@ -47,7 +47,7 @@ static char			*get_fractional(long double ld, unsigned int p, char *ret)
 **	(Endianess shouldnt affect this!)
 */
 
-static t_bool		test_negative(float f)
+static t_bool	test_negative(float f)
 {
 	unsigned char	*access;
 	unsigned long	comp;
@@ -57,7 +57,7 @@ static t_bool		test_negative(float f)
 		return (TRUE);
 	if (f == 0.0)
 	{
-		access = (unsigned char*)&f;
+		access = (unsigned char *)&f;
 		i = 0;
 		comp = 0;
 		while (i < sizeof(float))
@@ -102,13 +102,14 @@ static long double	ftoa_roundup(long double ld, unsigned int prec)
 **	separator included) and calls rest of the functions in order.
 */
 
-static char			*compile(long double f, unsigned int prec, t_bool negative)
+static char	*compile(long double f, unsigned int prec, t_bool negative)
 {
 	char		*ret;
 	char		*s;
 
 	f += ftoa_roundup(f, prec);
-	if (!(s = ft_uitoa((size_t)f)))
+	s = ft_uitoa((size_t)f);
+	if (!s)
 		return (NULL);
 	if (negative)
 		ret = ft_strnew(ft_strlen(s + 1) + prec + 3);
@@ -132,7 +133,7 @@ static char			*compile(long double f, unsigned int prec, t_bool negative)
 **	best portable solution would be to write a signbit() function.
 */
 
-char				*ft_ftoa(long double f, unsigned int prec)
+char	*ft_ftoa(long double f, unsigned int prec)
 {
 	t_bool		negative;
 
