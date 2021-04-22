@@ -6,7 +6,7 @@
 /*   By: eniini <eniini@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/10 16:37:48 by eniini            #+#    #+#             */
-/*   Updated: 2021/04/22 12:57:35 by eniini           ###   ########.fr       */
+/*   Updated: 2021/04/22 17:50:31 by eniini           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,6 +67,9 @@ void			ft_putchar_fd(char c, int fd);
 void			ft_putstr_fd(char const *s, int fd);
 void			ft_putendl_fd(char const *s, int fd);
 void			ft_putnbr_fd(int n, int fd);
+
+int				ft_printf(const char *s, ...);
+int				ft_fprintf(const int fd, const char *s, ...);
 
 int				get_next_line(const int fd, char **line);
 
