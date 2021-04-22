@@ -6,7 +6,7 @@
 /*   By: eniini <eniini@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/10 16:37:48 by eniini            #+#    #+#             */
-/*   Updated: 2021/04/21 11:47:32 by eniini           ###   ########.fr       */
+/*   Updated: 2021/04/22 12:57:35 by eniini           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -120,7 +120,6 @@ void			*ft_memccpy(void *dst, const void *src, int c, size_t n);
 void			ft_memdel(void **ap);
 void			*ft_memmove(void *dst, const void *src, size_t len);
 void			*ft_memset(void *b, int c, size_t len);
-void			*ft_realloc(void *ptr, size_t size);
 void			ft_swap(void *a, void *b, size_t size);
 
 /*
