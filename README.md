@@ -1,8 +1,12 @@
 ## libft
 ### General utility library for 42 School studies
 Gradually rewriting standard C library functions as a study of Unix pipeline and languages' core elements that also doubles as the fundamental toolkit for more complex 42 curriculum projects. 
+<<<<<<< HEAD
 Includes sublibraries for printf and specialized graphics functions, latter of which is very in-progress. The static libraries can be compiled by themselves or packed into one.  
 Current version of libft uses headers only for the necessary datatypes, memory management and file I/O.   
+=======
+Current version of libft uses libc headers only for the necessary datatypes, memory management and file I/O.  
+>>>>>>> 1b8c018fba968feb0d9aad31ed68c014999a66fe
 Currently includes:  
 
 #### [Array manipulation / examination]
@@ -16,6 +20,7 @@ Currently includes:
 
 #### [File I/O]
 * get_next_line
+* printf / fprintf
 * putchar / putchar_fd
 * putstr/putstr_fd
 * putendl / putendl_fd
