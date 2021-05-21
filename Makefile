@@ -6,16 +6,17 @@
 #    By: eniini <eniini@student.hive.fi>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/06/11 10:42:46 by eniini            #+#    #+#              #
-#    Updated: 2021/04/22 18:18:08 by eniini           ###   ########.fr        #
+#    Updated: 2021/05/21 12:48:59 by eniini           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME	=	libft.a
 PRINTF	=	libftprintf.a
+GFX		=	libgfx.a
 
 # compiler
 CC	=	gcc
-CFLAGS	=	-Wall -Wextra -Werror
+CFLAGS	=	-Wall -Wextra -Werror -O3 -march=native
 
 # header directory
 INCDIR	=	includes
@@ -24,7 +25,6 @@ INCDIR	=	includes
 SRCDIRS	=	array_utils: \
 		char_utils: \
 		file_io: \
-		gfx: \
 		llist_utils: \
 		math: \
 		mem_utils: \
@@ -33,9 +33,11 @@ SRCDIRS	=	array_utils: \
 		type_conversion: \
 		wchar_utils
 PFTDIR	=	ft_printf:
+GFXDIR	=	gfx:
 # vpath
 VPATH	+=	$(addprefix srcs/,$(SRCDIRS))
 VPATH	+=	$(addprefix srcs/,$(PFTDIR))
+VPATH	+=	$(addprefix srcs/,$(GFXDIR))
 # source files
 SRCS	=	ft_free_arr.c \
 		ft_get_arr_size.c \
@@ -58,10 +60,6 @@ SRCS	=	ft_free_arr.c \
 		ft_putstr_fd.c \
 		ft_putstr.c \
 		get_next_line.c \
-		ft_d_lerp.c \
-		ft_i_lerp.c \
-		ft_inverse_d_lerp.c \
-		ft_inverse_i_lerp.c \
 		ft_elemdel.c \
 		ft_lstadd.c \
 		ft_lstaddl.c \
@@ -133,13 +131,23 @@ PFTSRCS	=	ft_printf.c \
 		ftprintf_sign.c \
 		ftprintf_str.c \
 		ftprintf_typecheck.c
+GFXSRCS	=	ft_color_lerp.c \
+		ft_d_lerp.c \
+		ft_i_lerp.c \
+		ft_inverse_d_lerp.c \
+		ft_inverse_i_lerp.c \
+		ft_create_bmp.c \
+		ft_hueshift.c \
+		ft_smoothstep.c
 
 #object directory
 OBJDIR	=	objs
 PFTOBJDIR =	pftobjs
+GFXOJBDIR =	gfxobjs
 #object files
 OBJS	=	$(patsubst %,$(OBJDIR)/%,$(SRCS:.c=.o))
 PFTOBJS	=	$(patsubst %,$(PFTOBJDIR)/%,$(PFTSRCS:.c=.o))
+GFXOBJS	=	$(patsubst %,$(GFXOJBDIR)/%,$(GFXSRCS:.c=.o))
 
 #colors
 CYAN	=	\033[0;36m
@@ -150,10 +158,12 @@ RESET	=	\033[1K\033[100D
 
 .PHONY: all clean fclean re
 
-all: $(NAME) $(PRINTF)
-	@ar -rc $(NAME) $(PFTOBJS)
+#compiles all libraries together
+all: $(NAME) $(PRINTF) $(GFX)
+	@ar -rc $(NAME) $(PFTOBJS) $(GFXOBJS)
 	@echo -e "$(CYAN)$(RESET)[libft] finished!$(NC)"
 
+#link obj files
 $(OBJDIR)/%.o:%.c
 	@mkdir -p $(OBJDIR)
 	@echo -ne "$(CYAN)."
@@ -164,6 +174,12 @@ $(PFTOBJDIR)/%.o:%.c
 	@echo -ne "$(PURPLE)."
 	@$(CC) $(CFLAGS) -o $@ -c $< -I$(INCDIR)
 
+$(GFXOJBDIR)/%.o:%.c
+	@mkdir -p $(GFXOJBDIR)
+	@echo -ne "$(PURPLE)."
+	@$(CC) -lm $(CFLAGS) -o $@ -c $< -I$(INCDIR)
+
+#compile each library separately
 $(NAME): $(OBJS)
 	@ar rcs $(NAME) $(OBJS)
 	@echo -e "$(CYAN)$(RESET)[libft] library built!$(NC)"
@@ -172,14 +188,20 @@ $(PRINTF): $(PFTOBJS)
 	@ar rcs $(PRINTF) $(PFTOBJS)
 	@echo -e "$(PURPLE)$(RESET)[ftprintf] library built!$(NC)"
 
+$(GFX) : $(GFXOBJS)
+	@ar rcs $(GFX) $(GFXOBJS)
+	@echo -e "$(PURPLE)$(RESET)[gfx] library built!$(NC)"
+
 clean:
 	@rm -rf $(OBJDIR)
 	@rm -rf $(PFTOBJDIR)
+	@rm -rf $(GFXOJBDIR)
 	@echo -e "$(CYAN)[libft] object files removed$(NC)"
 
 fclean: clean
 	@rm -f $(NAME)
 	@rm -f $(PRINTF)
+	@rm -f $(GFX)
 	@echo -e "$(CYAN)[libft] static libraries removed$(NC)"
 
 re: fclean all

@@ -1,7 +1,8 @@
 ## libft
 ### General utility library for 42 School studies
 Gradually rewriting standard C library functions as a study of Unix pipeline and languages' core elements that also doubles as the fundamental toolkit for more complex 42 curriculum projects. 
-Current version of libft uses headers only for the necessary datatypes, memory management and file I/O.  
+Includes sublibraries for printf and specialized graphics functions, latter of which is very in-progress. The static libraries can be compiled by themselves or packed into one.  
+Current version of libft uses headers only for the necessary datatypes, memory management and file I/O.   
 Currently includes:  
 
 #### [Array manipulation / examination]
@@ -19,13 +20,6 @@ Currently includes:
 * putstr/putstr_fd
 * putendl / putendl_fd
 * putnbr / putnbr_fd
-
-####	[GFX utility functions]
-
-* i_lerp
-* inverse_i_lerp
-* d_lerp
-* inverse_d_lerp
 
 #### [Generic linked list functions]
 * lstnew
@@ -88,3 +82,14 @@ Currently includes:
 * ftoa
 * itoa / itoa_base 
 * uitoa / uitoa_base
+
+####	[LIBGFX]
+
+* color_lerp
+* d_lerp
+* inverse_d_lerp
+* i_lerp
+* inverse_i_lerp
+* create_bmp
+* hueshift
+* smoothstep
