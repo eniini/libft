@@ -6,7 +6,7 @@
 #    By: eniini <eniini@student.hive.fi>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/06/11 10:42:46 by eniini            #+#    #+#              #
-#    Updated: 2021/05/22 13:30:34 by eniini           ###   ########.fr        #
+#    Updated: 2021/05/22 17:40:51 by eniini           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -138,6 +138,7 @@ GFXSRCS	=	ft_color_lerp.c \
 		ft_inverse_i_lerp.c \
 		ft_create_bmp.c \
 		ft_hueshift.c \
+		ft_init_gfxinfo.c \
 		ft_smoothstep.c
 
 #object directory
