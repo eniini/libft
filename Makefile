@@ -6,7 +6,7 @@
 #    By: eniini <eniini@student.hive.fi>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/06/11 10:42:46 by eniini            #+#    #+#              #
-#    Updated: 2021/05/21 12:48:59 by eniini           ###   ########.fr        #
+#    Updated: 2021/05/22 13:30:34 by eniini           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -161,47 +161,47 @@ RESET	=	\033[1K\033[100D
 #compiles all libraries together
 all: $(NAME) $(PRINTF) $(GFX)
 	@ar -rc $(NAME) $(PFTOBJS) $(GFXOBJS)
-	@echo -e "$(CYAN)$(RESET)[libft] finished!$(NC)"
+	@printf "$(CYAN)$(RESET)[libft] finished!$(NC)\n"
 
 #link obj files
 $(OBJDIR)/%.o:%.c
 	@mkdir -p $(OBJDIR)
-	@echo -ne "$(CYAN)."
+	@printf "$(CYAN)."
 	@$(CC) $(CFLAGS) -o $@ -c $< -I$(INCDIR)
 
 $(PFTOBJDIR)/%.o:%.c
 	@mkdir -p $(PFTOBJDIR)
-	@echo -ne "$(PURPLE)."
+	@printf "$(PURPLE)."
 	@$(CC) $(CFLAGS) -o $@ -c $< -I$(INCDIR)
 
 $(GFXOJBDIR)/%.o:%.c
 	@mkdir -p $(GFXOJBDIR)
-	@echo -ne "$(PURPLE)."
+	@printf "$(PURPLE)."
 	@$(CC) -lm $(CFLAGS) -o $@ -c $< -I$(INCDIR)
 
 #compile each library separately
 $(NAME): $(OBJS)
 	@ar rcs $(NAME) $(OBJS)
-	@echo -e "$(CYAN)$(RESET)[libft] library built!$(NC)"
+	@printf "$(CYAN)$(RESET)[libft] library built!$(NC)\n"
 
 $(PRINTF): $(PFTOBJS)
 	@ar rcs $(PRINTF) $(PFTOBJS)
-	@echo -e "$(PURPLE)$(RESET)[ftprintf] library built!$(NC)"
+	@printf "$(PURPLE)$(RESET)[ftprintf] library built!$(NC)\n"
 
 $(GFX) : $(GFXOBJS)
 	@ar rcs $(GFX) $(GFXOBJS)
-	@echo -e "$(PURPLE)$(RESET)[gfx] library built!$(NC)"
+	@printf "$(PURPLE)$(RESET)[gfx] library built!$(NC)\n"
 
 clean:
 	@rm -rf $(OBJDIR)
 	@rm -rf $(PFTOBJDIR)
 	@rm -rf $(GFXOJBDIR)
-	@echo -e "$(CYAN)[libft] object files removed$(NC)"
+	@printf "$(CYAN)[libft] object files removed$(NC)\n"
 
 fclean: clean
 	@rm -f $(NAME)
 	@rm -f $(PRINTF)
 	@rm -f $(GFX)
-	@echo -e "$(CYAN)[libft] static libraries removed$(NC)"
+	@printf "$(CYAN)[libft] static libraries removed$(NC)\n"
 
 re: fclean all
