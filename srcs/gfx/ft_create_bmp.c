@@ -6,7 +6,7 @@
 /*   By: eniini <eniini@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/29 17:35:18 by eniini            #+#    #+#             */
-/*   Updated: 2021/05/14 19:03:17 by eniini           ###   ########.fr       */
+/*   Updated: 2021/05/22 17:07:59 by eniini           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -106,30 +106,49 @@ static unsigned char	*cr_bmap_infoheader(int h, int w, int bpp)
 **	Paddingsize is calculated to add 0-3 null bytes after each written line.
 */
 
-int	ft_create_bmp(char *filename, int bpp, char *img_addr)
+void	write_into_file(int fd, t_gfxinfo *info, int paddingsize)
 {
-	static unsigned char	padding[3] = {0, 0, 0};
-	int						paddingsize;
-	int						stride;
-	int						fd;
-	int						i;
+	static char	padding[3] = {0, 0, 0};
+	int			i;
 
-	paddingsize = (4 - (WIN_W * bpp / 8) % 4) % 4;
-	stride = (WIN_W * bpp / 8) + paddingsize;
+	i = 0;
+	if (info->one_d_addr)
+	{
+		while (i < info->win_height)
+		{
+			write(fd, (unsigned int *)info->one_d_addr
+				+ (i * (info->win_width * info->bpp / 8)),
+				(info->bpp / 8) * info->win_width);
+			write(fd, padding, paddingsize);
+			i++;
+		}
+	}
+	if (info->two_d_addr)
+	{
+		while (info->two_d_addr[i])
+		{
+			write(fd, (unsigned int *)info->two_d_addr[i],
+				(info->bpp / 8) * info->win_width);
+			write(fd, padding, paddingsize);
+			i++;
+		}
+	}
+}
+
+int	ft_create_bmp(char *filename, t_gfxinfo *i)
+{
+	int			paddingsize;
+	int			stride;
+	int			fd;
+
+	paddingsize = (4 - (i->win_width * i->bpp / 8) % 4) % 4;
+	stride = (i->win_width * i->bpp / 8) + paddingsize;
 	fd = open(filename, O_APPEND | O_TRUNC | O_CREAT | O_WRONLY, S_IRWXU);
 	if (fd < 0)
 		return (-1);
-	write(fd, cr_bmap_fileheader(WIN_H, stride), 14);
-	write(fd, cr_bmap_infoheader(-(WIN_H), WIN_W, bpp), 40);
-	i = 0;
-	while (i < WIN_H)
-	{
-		write(fd, (unsigned char *)img_addr
-			+ (i * (WIN_W * bpp / 8)),
-			(bpp / 8) * WIN_W);
-		write(fd, padding, paddingsize);
-		i++;
-	}
+	write(fd, cr_bmap_fileheader(i->win_width, stride), 14);
+	write(fd, cr_bmap_infoheader(-(i->win_height), i->win_width, i->bpp), 40);
+	write_into_file(fd, i, paddingsize);
 	if (close(fd))
 		return (-1);
 	return (0);
