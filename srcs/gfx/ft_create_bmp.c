@@ -6,7 +6,7 @@
 /*   By: eniini <eniini@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/29 17:35:18 by eniini            #+#    #+#             */
-/*   Updated: 2021/05/22 17:07:59 by eniini           ###   ########.fr       */
+/*   Updated: 2021/05/22 17:55:36 by eniini           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -108,15 +108,15 @@ static unsigned char	*cr_bmap_infoheader(int h, int w, int bpp)
 
 void	write_into_file(int fd, t_gfxinfo *info, int paddingsize)
 {
-	static char	padding[3] = {0, 0, 0};
-	int			i;
+	static unsigned char	padding[3] = {0, 0, 0};
+	int						i;
 
 	i = 0;
 	if (info->one_d_addr)
 	{
 		while (i < info->win_height)
 		{
-			write(fd, (unsigned int *)info->one_d_addr
+			write(fd, (unsigned char *)info->one_d_addr
 				+ (i * (info->win_width * info->bpp / 8)),
 				(info->bpp / 8) * info->win_width);
 			write(fd, padding, paddingsize);
