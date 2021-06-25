@@ -6,7 +6,7 @@
 #    By: eniini <eniini@student.hive.fi>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/06/11 10:42:46 by eniini            #+#    #+#              #
-#    Updated: 2021/05/22 17:40:51 by eniini           ###   ########.fr        #
+#    Updated: 2021/06/21 19:16:01 by eniini           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ GFX		=	libgfx.a
 
 # compiler
 CC	=	gcc
-CFLAGS	=	-Wall -Wextra -Werror -O3 -march=native
+CFLAGS	=	-Wall -Wextra -Werror -O3 -march=native -g
 
 # header directory
 INCDIR	=	includes
@@ -131,12 +131,15 @@ PFTSRCS	=	ft_printf.c \
 		ftprintf_sign.c \
 		ftprintf_str.c \
 		ftprintf_typecheck.c
-GFXSRCS	=	ft_color_lerp.c \
+GFXSRCS	=	ft_argb_grayscale.c \
+		ft_argb_lerp.c \
+		ft_color_lerp.c \
 		ft_d_lerp.c \
 		ft_i_lerp.c \
 		ft_inverse_d_lerp.c \
 		ft_inverse_i_lerp.c \
 		ft_create_bmp.c \
+		ft_load_bmp.c \
 		ft_hueshift.c \
 		ft_init_gfxinfo.c \
 		ft_smoothstep.c

@@ -6,7 +6,7 @@
 /*   By: eniini <eniini@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/29 17:23:17 by eniini            #+#    #+#             */
-/*   Updated: 2021/05/22 16:04:11 by eniini           ###   ########.fr       */
+/*   Updated: 2021/06/21 19:05:17 by eniini           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,18 +28,22 @@ typedef struct s_rgb_mat
 }				t_rgb_mat;
 
 /*
-*	Some utility functions require precise information about the window
-*	that's being drawn to. gfxinfo solves the problem while respecting
+*	Some utility functions require precise information about the window/image
+*	that's being drawn to or read from.
+*	gfxinfo solves the problem while also respecting
 *	Norme's function parameter limit.
 */
+//Struct for storing and manipulating raw image data
 typedef struct s_gfxinfo
 {
-	int			win_width;
-	int			win_height;
-	int			bpp;
-	char		*one_d_addr;
-	char		**two_d_addr;
-}				t_gfxinfo;
+	int				img_w;
+	int				img_h;
+	int				bpp;
+	unsigned char	*one_d_addr;
+	unsigned char	**two_d_addr;
+}					t_gfxinfo;
+
+uint32_t		ft_argb_lerp(uint32_t c1, uint32_t c2, double p);
 
 int				ft_color_lerp(int c1, int c2, double p);
 
@@ -51,10 +55,14 @@ double			ft_inverse_d_lerp(double a, double b, double x);
 
 int				ft_create_bmp(char *filename, t_gfxinfo *info);
 
-int				ft_hueshift(int c, double p);
+t_gfxinfo		*ft_load_bmp(const char *imagepath);
 
-t_gfxinfo	*ft_init_1d_info(int win_w, int win_h, int bpp, char *addr);
-t_gfxinfo	*ft_init_2d_info(int win_w, int win_h, int bpp, char **addr);
+int				ft_hueshift(int c, double p);
+uint32_t		ft_argb_grayscale(uint32_t c);
+uint32_t		ft_argb_realgrayscale(uint32_t c);
+
+t_gfxinfo		*ft_init_1d_info(int w, int h, int bpp, unsigned char *c);
+t_gfxinfo		*ft_init_2d_info(int w, int h, int bpp, unsigned char **c);
 
 double			ft_smoothstep(double start, double end, double x);
 
